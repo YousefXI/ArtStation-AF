@@ -1,0 +1,303 @@
+/* ------------------ */
+/* Custom properties */
+/* ------------------ */
+
+
+
+:root {
+  --primary-clr: #0078E7;
+  --accent-clr: #fff;
+  --text-clr: #111;
+  --sec-text-clr: #555;
+  --btn-color: #fff;
+  --gapblock: 14rem;
+  --btn-hover: #006ed5; 
+  --btn-transition: 200ms;
+  --animation-transition: 700ms;
+}
+
+/* ------------------ */
+/* Reset */
+/* ------------------ */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+:active, :hover, :focus {
+  outline: 0!important;
+  outline-offset: 0;
+}
+
+/* HTML */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*body */
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  /* height: 1000vh; */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* images */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* forms elements */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ------------------ */
+/* Utility classes */
+/* ------------------ */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  margin: 18rem 14rem 0;
+  color: var(--text-clr);
+}
+
+.h1_text {
+  width: 20ch;
+  font-size: 52px;
+  letter-spacing: 8px;
+  font-weight: bolder;
+}
+
+.p_text {
+  margin-top: 1rem;
+  color: var(--sec-text-clr);
+  font-size: 20px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: auto; height: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+/* FARE BTN COME QUELLI IN CODEPEN PINNATI E VEDERE COME SONO */
+
+
+/* -----------------------------------------------
+--------------------- NAVBAR ---------------------
+-------------------------------------------------- */
+
+
+
+.navbar {
+  position: fixed;
+  display: flex;
+  height: 100px;
+  background: #Ffffff;
+  min-width: 100%;
+  z-index: 999;
+}
+
+.nav_links {
+  display: flex;
+  margin: 0 auto;
+  min-width: 100%;
+}
+
+.nav_links ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.nav_links a {
+  text-decoration: none;
+  color: var(--text-clr);
+  /* font-family: 'Poppins', sans-serif; */
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  /* letter-spacing: 1px; */
+} 
+
+.nav_links li {
+  display: flex;
+  margin: auto 0;
+}
+
+#nav_logo {
+  margin-left: var(--gapblock);
+  margin-block: auto;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#nav_ul {
+  margin-left: auto;
+  margin-right: var(--gapblock);
+}
+
+#nav_cta a {
+  background: var(--primary-clr);
+  padding: 13px 30px;
+  border-radius: 50px;
+  margin-right: 0;
+  transition: var(--btn-transition);
+}
+
+#nav_cta a:hover {
+  background: var(--btn-hover);
+  transition: var(--btn-transition);
+}
+
+/* FARE TASTI NAVBAR COME QUELLA CHE C'è NEL BROWSER (YOUTUBE) */
+
+
+
+
+
+
+/* -----------------------------------------------
+--------------------- HOME-PAGE -------------------
+------------------------------------------------ */
+
+
+.home_page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  /* background-image: url(background\ alessandro\ fiore.jpg); */
+  background-size: cover;
+  background: #ffffff;
+}
+
+.h1 {
+  width: 20ch;
+  font-size: 52px;
+  letter-spacing: 8px;
+  font-weight: bolder;
+}
+
+.home_text p {
+  width: 20rem;
+  margin-top: 1rem;
+  color: var(--sec-text-clr);
+  font-size: 20px;
+}
+
+.home_cta {
+  display: flex;
+  gap: 4rem;
+  margin-top: 5rem;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.btn_contact {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 34px;
+  background: var(--primary-clr);
+  border-radius: 12px;
+  min-width: 240px;
+  transition: var(--btn-transition);
+}
+
+.btn_contact_1:hover {
+  background: var(--btn-hover);
+  transition: var(--btn-transition);
+}
+
+.btn_contact_2 {
+  background: #1F1F1F;
+  border: solid var(--primary-clr) 2px;
+}
+
+.down_arrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 12rem;
+  animation: var(--animation-transition) ease-in-out var(--animation-transition) infinite alternate;
+  animation-name: up-to-down;
+}
+
+ @keyframes up-to-down {
+  0% {
+    transform: translateY(0px);
+  }
+  
+  100% {
+   transform: translateY(10px);
+  }
+ }
+
+ /* ^ CAPIRE COME SI FA A FARE LA FRECCIA CHE VA DA SOPRA A SOTTO SENZA FARE UNO SCATTO IMPROVVISO (CSS ANIMATION INFINITE) - FATTO/
+
+/* NELLA HOME PAGE METTERE UNA FOTO ROTONDA CON UN BORDO VIOLA COME IL FOOTER E VEDERE COM'è */
+
+/* -----------------------------------------------
+--------------------- ABOUT-PAGE -----------------
+------------------------------------------------ */
+
+.about_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.about_text p {
+  max-width: 32rem;
+}
+
+.line_1 {
+  flex: 0;
+  content: '';
+  height: 18em;
+  margin-right: 8rem;
+  margin-left: -2rem;
+  border: 1px solid #111;
+  opacity: 0.2;
+  margin-top: 2rem;
+}
+
