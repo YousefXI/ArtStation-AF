@@ -5,15 +5,23 @@
 
 
 :root {
-  --primary-clr: #0078E7;
+  --primary-clr: #055366;
   --accent-clr: #fff;
+  --accent-clr-2: #424656;
+  --accent-color-3: #00364e;
+  --accent-color-4: #69818a;
+  --navbar-clr: #fff;
   --text-clr: #111;
+  --text-clr-white: #c1c1c1;
   --sec-text-clr: #555;
-  --btn-color: #fff;
+  --btn-clr-1: #fff;
+  --btn-clr-2: rgb(28, 31, 30);
   --gapblock: 14rem;
   --btn-hover: #006ed5; 
-  --btn-transition: 200ms;
+  --btn-transition: 100ms;
+  --btn-transition-2: 250ms;
   --animation-transition: 700ms;
+  --transition-stack: 500ms;
 }
 
 /* ------------------ */
@@ -42,7 +50,13 @@ picture {
   margin: 0;
 }
 
-:active, :hover, :focus {
+ul {
+  padding: 0;
+}
+
+:active,
+:hover,
+:focus {
   outline: 0!important;
   outline-offset: 0;
 }
@@ -60,6 +74,7 @@ body {
   min-height: 100vh;
   /* height: 1000vh; */
   font-family: 'Poppins', sans-serif;
+  background: #f6ece9;
 }
 
 /* images */
@@ -88,11 +103,15 @@ select {
 
 .grid {
   display: grid;
-  gap: var(--gap, 1rem);
+  grid-template-columns: auto auto auto ;
+  row-gap: 2rem;
+  list-style: none;
+  max-width: 35rem;
+  margin-top: 2rem;
 }
 
 .container {
-  margin: 18rem 14rem 0;
+  margin: 14rem 14rem 0;
   color: var(--text-clr);
 }
 
@@ -111,12 +130,15 @@ select {
 
 .btn {
   position: relative;
-  display: inline-block;
-  width: auto; height: auto;
-  background-color: transparent;
   border: none;
   cursor: pointer;
   min-width: 150px;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--btn-clr-1);
 }
 
 /* FARE BTN COME QUELLI IN CODEPEN PINNATI E VEDERE COME SONO */
@@ -129,12 +151,13 @@ select {
 
 
 .navbar {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   height: 100px;
-  background: #Ffffff;
+  background: var(--navbar-clr);
   min-width: 100%;
   z-index: 999;
+  border-bottom: 1px solid;
 }
 
 .nav_links {
@@ -178,44 +201,37 @@ select {
 
 #nav_cta a {
   background: var(--primary-clr);
+  color: var(--accent-clr);
   padding: 13px 30px;
   border-radius: 50px;
   margin-right: 0;
   transition: var(--btn-transition);
+  font-weight: 500;
 }
 
 #nav_cta a:hover {
-  background: var(--btn-hover);
+  background: var(--accent-color-3);
   transition: var(--btn-transition);
 }
 
 /* FARE TASTI NAVBAR COME QUELLA CHE C'è NEL BROWSER (YOUTUBE) */
 
 
-
-
-
+ 
 
 /* -----------------------------------------------
---------------------- HOME-PAGE -------------------
+--------------------- HERO-SECTION -------------------
 ------------------------------------------------ */
 
 
-.home_page {
+#hero_section {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   /* background-image: url(background\ alessandro\ fiore.jpg); */
   background-size: cover;
-  background: #ffffff;
-}
-
-.h1 {
-  width: 20ch;
-  font-size: 52px;
-  letter-spacing: 8px;
-  font-weight: bolder;
+  background: var(--accent-clr);
 }
 
 .home_text p {
@@ -223,6 +239,10 @@ select {
   margin-top: 1rem;
   color: var(--sec-text-clr);
   font-size: 20px;
+}
+
+.home_text h1 span {
+  color: var(--accent-color-4);
 }
 
 .home_cta {
@@ -233,27 +253,31 @@ select {
   letter-spacing: 1px;
 }
 
+/*----------- Home Button -------------*/
+
 .btn_contact {
   display: flex;
   justify-content: center;
   text-decoration: none;
-  color: #fff;
-  padding: 10px 34px;
-  background: var(--primary-clr);
-  border-radius: 12px;
-  min-width: 240px;
-  transition: var(--btn-transition);
+  color: var(--btn-clr-1);
+  padding: 10px 32px;
+  background: var(--btn-clr-2);
+  min-width: 100px;
+  transition: var(--btn-transition-2);
+  border: 1px solid var(--btn-clr-2);
 }
 
 .btn_contact_1:hover {
-  background: var(--btn-hover);
-  transition: var(--btn-transition);
+  box-shadow: inset 0 50px 0  0 var(--btn-clr-1);
+  color: var(--btn-clr-2);
+  
 }
 
 .btn_contact_2 {
   background: #1F1F1F;
   border: solid var(--primary-clr) 2px;
 }
+
 
 .down_arrow {
   display: flex;
@@ -269,6 +293,7 @@ select {
   }
   
   100% {
+
    transform: translateY(10px);
   }
  }
@@ -281,23 +306,294 @@ select {
 --------------------- ABOUT-PAGE -----------------
 ------------------------------------------------ */
 
-.about_container {
-  display: flex;
-  flex-direction: row;
+#about_section {
+  padding-top: 1rem;
 }
+/* per NAVBAR fixed */
 
 .about_text p {
   max-width: 32rem;
 }
 
 .line_1 {
-  flex: 0;
   content: '';
   height: 18em;
-  margin-right: 8rem;
+  margin-right: 15rem;
   margin-left: -2rem;
   border: 1px solid #111;
   opacity: 0.2;
   margin-top: 2rem;
+  transform: translateX(8rem);
 }
 
+/*----------- Skills Table -------------*/
+
+.skill_table h1 {
+  font-size: 40px;
+}
+
+.skill_table {
+  margin-top: 6rem;
+}
+
+.skill_grid_2 {
+  margin-left: 2rem;
+}
+
+.skill_link {
+  display: flex;
+  justify-content: center;
+  background: var(--accent-clr-2);
+  padding: 8px 16px;
+  max-width: none;
+  width: 9rem;
+  border-radius: 2px;
+  transition: var(--btn-transition);
+}
+
+.skill_link:hover {
+  transform: translateY(-2px);
+  transition: var(--btn-transition);
+}
+
+/* magari a destra delel skills mettere uan roba che c'è nel suo resume di ArtStation */
+
+
+/* -----------------------------------------------
+--------------------- PROJECT-PAGE -----------------
+------------------------------------------------ */
+
+
+
+.h1 {
+  font-size: 40px;
+}
+
+
+/*----------- Project Cards -------------*/
+
+.card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10rem;
+} 
+
+.card {
+  display: flex; 
+  background: #e3e3e4;
+  /* padding: 20px; */
+  border-radius: 15px;
+  box-shadow: rgb(173, 173, 173) 0 0 50px;
+}
+/* arrivato a box shadow (FIXA DOPO) */
+
+.card_1 {
+  margin-top: 5rem;
+}
+
+
+.card p {
+  position: relative;
+  padding: 8rem 18rem 0 10rem;
+  font-size: 20px;
+}
+
+.card_text {
+  display: flex;
+}
+
+.card_text:not(.card_text2)::before {
+  transform: translateX(30rem);
+}
+
+.card img {
+  width: 100%;
+  display: inline-block;
+  border-radius: 15px 0 0 15px;
+}
+
+#posted {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* ---card 2--- */
+
+.card_2 p {
+  position: relative;
+  padding: 8rem 10rem 0 18rem;
+  font-size: 20px;
+}
+
+.card_2 {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.card_2 img {
+  border-radius: 0 15px 15px 0;
+}
+
+.card_text2::before {
+  transform: translateX(-6rem);
+}
+
+/* -----animation card----- */
+.card_text::before {
+  transition: 250ms;
+  background: rgb(28, 31, 30);
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 200px;
+}
+
+.card_text:hover::before {
+  width: 6px;
+  transition: 250ms;
+}
+
+.card_text:not(.card_text2):hover::before {
+  transform: translateX(calc(30rem - 6px));
+}
+
+
+
+/*----------- Project Grid -------------*/
+
+.project_grid_container h1 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.project_grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 4rem;
+  row-gap: 8rem;
+}
+
+.project_stack {
+  height: 400px;
+  position: relative;
+  cursor: pointer;
+}
+
+.project_img,
+.project_img_notActive {
+  width: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  object-fit: cover;
+  transition: var(--transition-stack);
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.project_info {
+  position: relative;
+  transform: translate(4rem, 15rem);
+  width: 70%;
+  color: #fff;
+  opacity: 0;
+  transition: var(--transition-stack);
+  text-align: center;
+}
+
+.project_img:hover {
+  transition: var(--transition-stack);
+}
+
+.project_stack:hover .project_info {
+  opacity: 1;
+}
+
+.project_stack:hover .project_img {
+  filter: blur(8px);
+}
+
+
+
+
+/* -----------------------------------------------
+--------------------- FOOTER -----------------
+------------------------------------------------ */
+
+.footer {
+  background: var(--accent-color-3);
+}
+
+.footer_container {
+  text-align: center;
+  margin: none;
+  color: var(--text-clr-white);
+}
+
+.footer_container h1 {
+  margin-bottom: 4rem;
+  padding-top: 5rem;
+  font-weight: 100;
+}
+
+.footer_container p {
+  display: flex;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.footer_container_p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_container_p p {
+  width: 80%;
+}
+
+.footer_container ul {
+  list-style: none;
+}
+
+.useful_links {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.useful_links a {
+  text-decoration: none;
+  color: var(--text-clr-white);
+}
+
+.useful_links a:hover {
+  color: #fff;
+}
+
+.socialmedia_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding-bottom: 6rem;
+  padding-top: 2rem;
+}
+
+.footer_container ul {
+  margin: 0;
+}
+
+
+
+/* continuare footer */
+
+
+
+/* LINK NAV CON COLORE SECONDARIO (VIOLA DEL FOOTER) */
+
+
+/* HOME_PAGE IN DARK MODE E LE ALTRE IN LIGHT MODE */
