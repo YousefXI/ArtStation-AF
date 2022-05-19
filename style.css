@@ -72,9 +72,8 @@ html {
 body {
   line-height: 1.5;
   min-height: 100vh;
-  /* height: 1000vh; */
   font-family: 'Poppins', sans-serif;
-  background: #f6ece9;
+  /* background: #f6ece9; */
 }
 
 /* images */
@@ -232,6 +231,10 @@ select {
   /* background-image: url(background\ alessandro\ fiore.jpg); */
   background-size: cover;
   background: var(--accent-clr);
+}
+
+.home_container {
+  margin-top: 10rem;
 }
 
 .home_text p {
