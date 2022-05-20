@@ -13,7 +13,8 @@
   --navbar-clr: #fff;
   --text-clr: #111;
   --text-clr-white: #c1c1c1;
-  --sec-text-clr: #555;
+  --sec-text-clr: #666;
+  --ter-text-color: #A6A6A6;
   --btn-clr-1: #fff;
   --btn-clr-2: rgb(28, 31, 30);
   --gapblock: 14rem;
@@ -152,7 +153,7 @@ select {
 .navbar {
   /* position: fixed; */
   display: flex;
-  height: 100px;
+  height: 8rem;
   background: var(--navbar-clr);
   min-width: 100%;
   z-index: 999;
@@ -179,7 +180,13 @@ select {
   text-transform: capitalize;
   cursor: pointer;
   /* letter-spacing: 1px; */
+  transition: var(--btn-transition);
 } 
+
+.nav_links a:hover {
+  color: var(--accent-color-4);
+  transition: var(--btn-transition);
+}
 
 .nav_links li {
   display: flex;
@@ -264,16 +271,15 @@ select {
   text-decoration: none;
   color: var(--btn-clr-1);
   padding: 10px 32px;
-  background: var(--btn-clr-2);
+  background: var(--accent-color-3);
   min-width: 100px;
   transition: var(--btn-transition-2);
-  border: 1px solid var(--btn-clr-2);
+  border: 1px solid var(--accent-color-3);
 }
 
 .btn_contact_1:hover {
   box-shadow: inset 0 50px 0  0 var(--btn-clr-1);
   color: var(--btn-clr-2);
-  
 }
 
 .btn_contact_2 {
@@ -314,6 +320,10 @@ select {
 }
 /* per NAVBAR fixed */
 
+.about_text h1 span{
+  color: var(--accent-color-4);
+}
+
 .about_text p {
   max-width: 32rem;
 }
@@ -322,11 +332,15 @@ select {
   content: '';
   height: 18em;
   margin-right: 15rem;
-  margin-left: -2rem;
+  margin-left: -11rem;
   border: 1px solid #111;
   opacity: 0.2;
   margin-top: 2rem;
   transform: translateX(8rem);
+}
+
+.videoyt p {
+  color: var(--ter-text-color);
 }
 
 /*----------- Skills Table -------------*/
@@ -363,10 +377,8 @@ select {
 
 
 /* -----------------------------------------------
---------------------- PROJECT-PAGE -----------------
+--------------------- PROJECT-SECTION -----------------
 ------------------------------------------------ */
-
-
 
 .h1 {
   font-size: 40px;
@@ -383,6 +395,10 @@ select {
   width: 100%;
   gap: 10rem;
 } 
+
+.h1_text span {
+  color: var(--accent-color-4);
+}
 
 .card {
   display: flex; 
@@ -590,9 +606,14 @@ select {
   margin: 0;
 }
 
+.copyright_part p {
+  margin: 0;
+  padding: 2rem 0;
+}
 
 
-/* continuare footer */
+
+/* continuare footer con data, copyright e firma*/
 
 
 
