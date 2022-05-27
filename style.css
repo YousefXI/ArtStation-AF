@@ -10,6 +10,7 @@
   --accent-clr-2: #424656;
   --accent-color-3: #00364e;
   --accent-color-4: #69818a;
+  --link-color: #e95453;
   --navbar-clr: #fff;
   --text-clr: #111;
   --text-clr-white: #c1c1c1;
@@ -19,7 +20,7 @@
   --btn-clr-2: rgb(28, 31, 30);
   --gapblock: 14rem;
   --btn-hover: #006ed5; 
-  --btn-transition: 100ms;
+  --btn-transition: 200ms;
   --btn-transition-2: 250ms;
   --animation-transition: 700ms;
   --transition-stack: 500ms;
@@ -184,7 +185,7 @@ select {
 } 
 
 .nav_links a:hover {
-  color: var(--accent-color-4);
+  color: var(--link-color);
   transition: var(--btn-transition);
 }
 
@@ -213,10 +214,11 @@ select {
   margin-right: 0;
   transition: var(--btn-transition);
   font-weight: 500;
+  border: var(--primary-clr) solid 1px;
 }
 
 #nav_cta a:hover {
-  background: var(--accent-color-3);
+  background: var(--link-color);
   transition: var(--btn-transition);
 }
 
@@ -251,7 +253,11 @@ select {
   font-size: 20px;
 }
 
-.home_text h1 span {
+.home_text h1 {
+  font-size: 4rem;
+}
+
+.h1_text span {
   color: var(--accent-color-4);
 }
 
@@ -429,7 +435,7 @@ select {
 }
 
 .card img {
-  width: 100%;
+  width: 572.484px; height: 572.484px;
   display: inline-block;
   border-radius: 15px 0 0 15px;
 }
@@ -483,8 +489,8 @@ select {
 /*----------- Project Grid -------------*/
 
 .project_grid_container h1 {
-  margin-top: 6rem;
-  margin-bottom: 2rem;
+  margin-top: 12rem;
+  margin-bottom: 4rem;
 }
 
 .project_grid {
@@ -502,7 +508,7 @@ select {
 
 .project_img,
 .project_img_notActive {
-  width: 100%;
+  min-width: 100%;
   position: absolute;
   top: 0; left: 0;
   object-fit: cover;
@@ -590,7 +596,7 @@ select {
 }
 
 .useful_links a:hover {
-  color: #fff;
+  color: var(--accent-clr);
 }
 
 .socialmedia_links {
